@@ -2,10 +2,12 @@ $(function () {
    $("#btnNew").on('click', function () {
        var studentName=$("#studentName").val();
        var course_id=$("#course_id").val();
-       var student_payment=$("#payment").val();
+       var student_payment=$("#student_payment").val();
        var ctime_id=$('#ctime_id').val();
+
+
        
-       $.ajax({
+      $.ajax({
            type: 'get',
            url : 'newStudent',
            data : {studentName:studentName, student_payment:student_payment, course_id:course_id, ctime_id:ctime_id},
@@ -19,5 +21,6 @@ $(function () {
                }
            }
        });
+
    });
 });

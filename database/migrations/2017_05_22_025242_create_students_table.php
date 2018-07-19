@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->timestamps();
             $table->string('studentName');
             $table->string('course_id');
-            $table->string('student_payment');
+            $table->string('student_payment')->nullable();
             $table->integer('ctime_id');
         });
     }

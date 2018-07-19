@@ -15,9 +15,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/jQuery.js') }}"></script>
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -86,9 +84,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <script src="{{ asset('js/jQuery.js') }}"></script>
+
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

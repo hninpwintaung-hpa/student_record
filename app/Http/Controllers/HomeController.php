@@ -53,25 +53,14 @@ class HomeController extends Controller
         $ctime_id=$request['ctime_id'];
 
         if($studentName){
-            if($student_payment){
-                if($course_id){
-                    $st=new Student();
-                    $st->studentName=$studentName;
-                    $st->student_payment=$student_payment;
-                    $st->course_id=$course_id;
-                    $st->ctime_id=$ctime_id;
-                    $st->save();
-                    echo "<li class='alert alert-success'>The new student have been successfully added.</li>";
 
-                }else{
-                    echo "<li class='alert alert-danger'>The course field is selected required.</li>";
-
-                }
-
-            }else{
-                echo "<li class='alert alert-danger'>The student payment field is required.</li>";
-
-            }
+            $st=new Student();
+            $st->studentName=$studentName;
+            $st->student_payment=$student_payment;
+            $st->course_id=$course_id;
+            $st->ctime_id=$ctime_id;
+            $st->save();
+            echo "<li class='alert alert-success'>The new student have been successfully added.</li>";
 
         }else{
             echo "<li class='alert alert-danger'>The student name field is required.</li>";

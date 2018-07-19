@@ -92,6 +92,7 @@
                                             </tr>
                                             @endforeach
                                     </table>
+                                    {{$students->links()}}
                                 </div>
                             </div>
                         </div>
@@ -137,8 +138,8 @@
                 <input type="text" name="studentName" id="studentName" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="payment" class="control-label">Student Payment</label>
-                    <input type="text" name="payment" id="payment" class="form-control">
+                    <label for="student_payment" class="control-label">Student Payment</label>
+                    <input type="text" name="student_payment" id="student_payment" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="ctime_id" class="control-label">Batch</label>
