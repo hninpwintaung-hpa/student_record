@@ -60,6 +60,8 @@ class HomeController extends Controller
         $st->update();
         return redirect()->back();
     }
+
+
     public function getNewStudent(Request $request){
         $studentName=$request['studentName'];
         $student_payment=$request['student_payment'];
@@ -67,14 +69,22 @@ class HomeController extends Controller
         $ctime_id=$request['ctime_id'];
 
         if($studentName){
+            if($course_id){
 
-            $st=new Student();
-            $st->studentName=$studentName;
-            $st->student_payment=$student_payment;
-            $st->course_id=$course_id;
-            $st->ctime_id=$ctime_id;
-            $st->save();
-            echo "<li class='alert alert-success'>The new student have been successfully added.</li>";
+                $st=new Student();
+                $st->studentName=$studentName;
+                $st->student_payment=$student_payment;
+                $st->course_id=$course_id;
+                $st->ctime_id=$ctime_id;
+                $st->save();
+                echo "<li class='alert alert-success'>The new student have been successfully added.</li>";
+
+
+            }else{
+                echo "<li class='alert alert-danger'>The course name field is selected required.</li>";
+
+            }
+
 
         }else{
             echo "<li class='alert alert-danger'>The student name field is required.</li>";

@@ -1,10 +1,13 @@
 $(function () {
 
     $("#recordTable").dataTable( {
-        "order": [[ 3, "desc" ]]
+        "order": [[ 0, "desc" ]]
     });
 
-   $("#btnNew").on('click', function () {
+
+
+   $("#newStudentForm").on('submit', function (e) {
+       e.preventDefault();
        var studentName=$("#studentName").val();
        var course_id=$("#course_id").val();
        var student_payment=$("#student_payment").val();

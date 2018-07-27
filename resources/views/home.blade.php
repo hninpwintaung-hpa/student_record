@@ -22,18 +22,20 @@
                                     <table class="table table-hover" id="recordTable">
                                         <thead>
                                     <tr style="background: grey; color: #fff">
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Course</th>
-                                        <th>Course Fees</th>
-                                        <th>Student Payment</th>
-                                        <th>To Fees</th>
+                                        <th>နံပတ္စဥ္</th>
+                                        <th>အမည္</th>
+                                        <th>အမွတ္စဥ္</th>
+                                        <th>သင္တန္းသင္ရိုး</th>
+                                        <th>သင္တန္းေၾကး</th>
+                                        <th>ေပးၿပီး</th>
+                                        <th>ေပးရန္က်န္ရွိ</th>
                                     </tr>
                                         </thead>
                                         @foreach($students as $st)
                                             <tr>
                                                 <td>{{$st->id}}</td>
                                                 <td>{{$st->studentName}}</td>
+                                                <td>{{$st->ctime->batch}}</td>
                                                 <td>{{$st->course->course_name}}</td>
                                                 <td>{{$st->course->course_fees}}</td>
                                                 <td><span class="pull-left">{{$st->student_payment}}</span>
@@ -125,6 +127,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div id="successInfo"></div>
+        <form id="newStudentForm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -162,8 +165,9 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button"  id="btnNew" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
+        </div>
         </div>
     </div>
     </div>
