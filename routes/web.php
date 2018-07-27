@@ -24,9 +24,14 @@ Route::get('/newStudent', [
     'as'=>'newStudent'
 ]);
 
-Route::get('/batch/{id}',[
+Route::get('/students/{name}',[
     'uses'=>'HomeController@getByBatch',
     'as'=>'batch'
+]);
+
+Route::get('/students/course/{course}',[
+    'uses'=>'HomeController@getByCourse',
+    'as'=>'by.course'
 ]);
 
 Route::post('/student_update',[

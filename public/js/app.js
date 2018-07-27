@@ -1,4 +1,9 @@
 $(function () {
+
+    $("#recordTable").dataTable( {
+        "order": [[ 3, "desc" ]]
+    });
+
    $("#btnNew").on('click', function () {
        var studentName=$("#studentName").val();
        var course_id=$("#course_id").val();

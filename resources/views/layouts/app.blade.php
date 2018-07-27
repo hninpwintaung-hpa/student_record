@@ -12,7 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{asset('dataTable/dataTable.css')}}" rel="stylesheet">
 
 
 
@@ -24,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top  navbar-static-top" >
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -88,6 +89,8 @@
     <script src="{{ asset('js/jQuery.js') }}"></script>
 
     <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+    <script src="{{asset('dataTable/dataTable.js')}}"></script>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -25,17 +25,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students=Student::OrderBy('id', 'desc')->paginate('10');
+        $students=Student::OrderBy('id', 'desc')->get();
         $courses=Course::all();
         $ctimes=Ctime::OrderBy('id', 'desc')->get();
         return view('home')->with(['courses'=>$courses])->with(['students'=>$students])->with(['ctimes'=>$ctimes]);
     }
-    public function getByBatch($id){
+    public function getByBatch($name){
 
-        $students=Student::where('ctime_id', $id)->OrderBy('id', 'desc')->paginate('10');
+        $ct=Ctime::where('batch', $name)->first();
+        $id=$ct->id;
+
+        $students=Student::where('ctime_id', $id)->OrderBy('id', 'desc')->get();
         $courses=Course::all();
         $ctimes=Ctime::OrderBy('id', 'desc')->get();
         return view('home')->with(['courses'=>$courses])->with(['students'=>$students])->with(['ctimes'=>$ctimes]);
+    }
+
+    public function getByCourse($course){
+        $co=Course::where('course_name', $course)->first();
+        $id=$co->id;
+        $students=Student::where('course_id', $id)->OrderBy('id', 'desc')->get();
+        $courses=Course::all();
+        $ctimes=Ctime::OrderBy('id', 'desc')->get();
+        return view('home')->with(['courses'=>$courses])->with(['students'=>$students])->with(['ctimes'=>$ctimes]);
+
+
     }
     public function postUpdate(Request $request){
         $id=$request['id'];
